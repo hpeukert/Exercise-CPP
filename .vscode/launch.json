@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/gammel/GitHub/Exercise-CPP/Rock, Paper, Scissor",
-      "program": "c:/gammel/GitHub/Exercise-CPP/Rock, Paper, Scissor/build/Debug/outDebug",
+      "cwd": "c:/gammel/GitHub/Exercise-CPP/Pointer, malloc",
+      "program": "c:/gammel/GitHub/Exercise-CPP/Pointer, malloc/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
