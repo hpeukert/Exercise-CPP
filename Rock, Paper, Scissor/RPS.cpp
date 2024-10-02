@@ -18,7 +18,8 @@ int main() {
     int userScore = 0;
     int computerScore = 0;
 
-    while (continuePlaying) {
+    while (continuePlaying)
+    {
         // Display menu and get choices
         displayMenu();
         int userChoice = getUserChoice();
@@ -45,7 +46,8 @@ int main() {
 }
 
 // Function to display the menu to the user
-void displayMenu() {
+void displayMenu()
+{
     std::cout << "\nWelcome to Rock, Paper, Scissors!\n";
     std::cout << "Please choose:\n";
     std::cout << "1. Rock\n";
@@ -54,62 +56,76 @@ void displayMenu() {
 }
 
 // Function to get the user's choice
-int getUserChoice() {
+int getUserChoice()
+{
     int choice;
-    while (true) {
+    while (true)
+    {
         std::cout << "Enter your choice (1, 2, or 3): ";
         std::cin >> choice;
 
         // Check if input is valid
-        if (std::cin.fail() || choice < 1 || choice > 3) {
+        if (std::cin.fail() || choice < 1 || choice > 3)
+        {
             std::cin.clear(); // Clear the error flag
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
             std::cout << "Invalid choice. Please enter 1, 2, or 3.\n";
-        } else {
+        } else
+        {
             return choice;
         }
     }
 }
 
 // Function to get the computer's random choice
-int getComputerChoice() {
+int getComputerChoice()
+{
     return std::rand() % 3 + 1;
 }
 
 // Function to display the choices made by both the user and the computer
-void displayChoices(int userChoice, int computerChoice) {
+void displayChoices(int userChoice, int computerChoice)
+{
     std::string choices[] = {"Rock", "Paper", "Scissors"};
     std::cout << "You chose: " << choices[userChoice - 1] << "\n";
     std::cout << "Computer chose: " << choices[computerChoice - 1] << "\n";
 }
 
 // Function to determine and display the winner, and update scores
-void determineWinner(int userChoice, int computerChoice, int &userScore, int &computerScore) {
-    if (userChoice == computerChoice) {
+void determineWinner(int userChoice, int computerChoice, int &userScore, int &computerScore)
+{
+    if (userChoice == computerChoice)
+    {
         std::cout << "It's a draw!\n";
     } else if ((userChoice == 1 && computerChoice == 3) ||
                (userChoice == 2 && computerChoice == 1) ||
                (userChoice == 3 && computerChoice == 2)) {
         std::cout << "You win!\n";
         userScore++;
-    } else {
+    } else
+    {
         std::cout << "Computer wins!\n";
         computerScore++;
     }
 }
 
 // Function to ask if the user wants to play again
-bool playAgain() {
+bool playAgain()
+{
     char response;
-    while (true) {
+    while (true)
+    {
         std::cout << "Do you want to play again? (y/n): ";
         std::cin >> response;
 
-        if (response == 'y' || response == 'Y') {
+        if (response == 'y' || response == 'Y')
+        {
             return true;
-        } else if (response == 'n' || response == 'N') {
+        } else if (response == 'n' || response == 'N')
+        {
             return false;
-        } else {
+        } else
+        {
             std::cout << "Invalid input. Please enter 'y' to play again or 'n' to quit.\n";
         }
     }
